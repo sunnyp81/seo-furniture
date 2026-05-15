@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/furniture-website-seo/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Furniture Website SEO: Technical and On-Page Optimisation Guide',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Optimise a Furniture Website for Search Engines',
+    step: [
+      { '@type': 'HowToStep', name: 'Audit your site structure', text: 'Map your product hierarchy and ensure search engines can crawl every category and product page through internal links.' },
+      { '@type': 'HowToStep', name: 'Fix image performance', text: 'Compress product images, implement lazy loading, and serve WebP format with appropriate alt text.' },
+      { '@type': 'HowToStep', name: 'Resolve duplicate content', text: 'Add canonical tags to faceted navigation URLs and configure URL parameters in Google Search Console.' },
+      { '@type': 'HowToStep', name: 'Add structured data', text: 'Implement Product, Offer, and BreadcrumbList schema on all product and category pages.' },
+      { '@type': 'HowToStep', name: 'Optimise category pages', text: 'Add 300-500 words of unique editorial content to every indexable category page.' },
+    ],
+  },
+];
+---
+<Base
+  title="Furniture Website SEO: Technical & On-Page Optimisation Guide"
+  description="How to optimise a furniture website for search engines. Covers site architecture, image optimisation, faceted navigation, structured data, and category page content."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Furniture Website SEO' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Furniture Website SEO: Technical and On-Page Optimisation Guide</h1>
+
+    <p class="text-lg mb-6">
+      A furniture website presents unique technical challenges for search engines. Product catalogues with hundreds of items, high-resolution imagery, faceted filtering, and seasonal range changes create a complex crawling and indexing landscape. This guide covers how to make your furniture website technically sound for <a href="/" class="text-emerald hover:underline">SEO</a>.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Site Architecture for Furniture Retailers</h2>
+
+    <p class="mb-4">
+      Your site structure should mirror how customers think about furniture, not how your warehouse organises stock. A logical hierarchy might look like:
+    </p>
+    <pre class="bg-surface p-4 rounded-lg text-sm mb-4 overflow-x-auto">
+Homepage
+├── Living Room
+│   ├── Sofas
+│   │   ├── Corner Sofas
+│   │   ├── 2-Seater Sofas
+│   │   └── Sofa Beds
+│   ├── Coffee Tables
+│   └── TV Units
+├── Bedroom
+│   ├── Beds
+│   ├── Wardrobes
+│   └── Bedside Tables
+├── Dining
+│   ├── Dining Tables
+│   ├── Dining Chairs
+│   └── Sideboards
+└── Guides / Blog</pre>
+    <p class="mb-4">
+      Every product should be reachable within 3-4 clicks from the homepage. Use breadcrumb navigation on every page so both users and search engines understand the hierarchy. If your catalogue is large, implement a clear faceted navigation system — but handle the SEO implications carefully (see below).
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Image Optimisation for Furniture Sites</h2>
+
+    <p class="mb-4">
+      Furniture retailers rely on visual presentation more than almost any other ecommerce vertical. High-quality product photography is essential for sales — but unoptimised images are the single biggest performance killer on furniture websites.
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Serve WebP (or AVIF) with JPEG fallback</strong> — modern formats reduce file size by 25-35% with no visible quality loss</li>
+      <li><strong>Implement responsive images</strong> — use srcset to serve smaller images on mobile devices. A 2400px hero image is unnecessary on a 375px-wide phone screen</li>
+      <li><strong>Lazy load below-the-fold images</strong> — only load product thumbnails as users scroll. The first 1-2 visible images should load eagerly</li>
+      <li><strong>Write descriptive alt text</strong> — "Grey velvet 3-seater Chesterfield sofa with buttoned back" is far better than "sofa-1.jpg" for both accessibility and image search rankings</li>
+      <li><strong>Optimise image file names</strong> — rename uploaded images to include the product name: "grey-velvet-chesterfield-sofa.webp"</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Handling Faceted Navigation</h2>
+
+    <p class="mb-4">
+      Faceted navigation (filters for colour, material, price, size) is essential for furniture shoppers — but it creates an SEO nightmare if not handled properly. Each filter combination generates a unique URL, potentially creating thousands of thin, duplicate pages.
+    </p>
+    <p class="mb-4">
+      The solution is a hybrid approach:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Index valuable filter combinations:</strong> "oak dining tables", "leather sofas", "velvet corner sofas" — these are terms people actually search for. Create clean, indexable URLs with unique content for these pages</li>
+      <li><strong>Noindex low-value combinations:</strong> price ranges, multiple-filter combinations, and sorting options should be noindexed or blocked from crawling</li>
+      <li><strong>Use canonical tags:</strong> point filtered URLs back to the parent category unless the filter page is intentionally indexed</li>
+      <li><strong>Configure URL parameters</strong> in Google Search Console to tell Google which parameters to ignore</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Structured Data for Furniture Pages</h2>
+
+    <p class="mb-4">
+      Implement JSON-LD structured data on every page type:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Product + Offer:</strong> on every product page — name, description, image, price, availability, SKU, brand</li>
+      <li><strong>BreadcrumbList:</strong> on every page — mirrors your breadcrumb navigation</li>
+      <li><strong>CollectionPage:</strong> on category pages — describes the collection</li>
+      <li><strong>FAQPage:</strong> on pages with FAQ sections — buying guides, category pages with common questions</li>
+      <li><strong>LocalBusiness:</strong> on your contact/showroom page — address, opening hours, phone</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Page Speed and Core Web Vitals</h2>
+
+    <p class="mb-4">
+      Google's Core Web Vitals are ranking factors. Furniture sites frequently fail these metrics due to heavy imagery and bloated page builders. Key targets:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Largest Contentful Paint (LCP):</strong> under 2.5 seconds — preload your hero image, use CDN for assets</li>
+      <li><strong>Cumulative Layout Shift (CLS):</strong> under 0.1 — set explicit width/height on all images, avoid dynamically injected content</li>
+      <li><strong>Interaction to Next Paint (INP):</strong> under 200ms — minimise JavaScript, defer non-critical scripts</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Category Page Content</h2>
+
+    <p class="mb-4">
+      The biggest SEO gap on most furniture websites is thin category pages. A page listing 30 sofas with no supporting text gives search engines almost nothing to rank. Add 300-500 words of genuine editorial content to every indexable category:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>A brief introduction explaining the category and what to consider when buying</li>
+      <li>Key differences between subcategories (e.g., corner sofas vs modular sofas)</li>
+      <li>Internal links to related categories, buying guides, and popular products</li>
+      <li>Answers to 2-3 common questions (with FAQPage schema)</li>
+    </ul>
+
+    <CTABar text="Need your furniture website technically audited?" />
+
+    <Related pages={related} />
+    <ContactForm heading="Get a Technical SEO Review of Your Furniture Website" />
+  </article>
+</Base>

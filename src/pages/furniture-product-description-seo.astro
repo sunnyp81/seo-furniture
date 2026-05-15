@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/furniture-product-description-seo/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Furniture Product Description SEO: Writing Copy That Ranks and Sells',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Write SEO-Optimised Furniture Product Descriptions',
+    step: [
+      { '@type': 'HowToStep', name: 'Research the target keyword', text: 'Identify the primary keyword for each product page using search volume and competitor analysis.' },
+      { '@type': 'HowToStep', name: 'Write a compelling opening', text: 'Lead with the benefit or use case, not the product name. Address what the buyer is looking for.' },
+      { '@type': 'HowToStep', name: 'Include specifications naturally', text: 'Weave dimensions, materials, and features into readable prose rather than relying solely on a spec table.' },
+      { '@type': 'HowToStep', name: 'Add unique selling points', text: 'Explain what makes this product different from alternatives. Include details the manufacturer description omits.' },
+      { '@type': 'HowToStep', name: 'Implement structured data', text: 'Add Product schema with name, description, image, price, availability, and brand.' },
+    ],
+  },
+];
+---
+<Base
+  title="Furniture Product Description SEO: Copy That Ranks & Sells"
+  description="How to write furniture product descriptions that rank in search and convert browsers into buyers. Covers keyword targeting, unique content, structured data, and common mistakes."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Furniture Product Description SEO' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Furniture Product Description SEO: Writing Copy That Ranks and Sells</h1>
+
+    <p class="text-lg mb-6">
+      Most furniture retailers copy product descriptions directly from their suppliers. It's understandable — rewriting hundreds of descriptions is time-consuming. But duplicate manufacturer content is one of the biggest <a href="/" class="text-emerald hover:underline">SEO</a> problems in the furniture industry. This guide shows how to write product descriptions that rank in search and convert browsers into buyers.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Why Manufacturer Descriptions Hurt Your Rankings</h2>
+
+    <p class="mb-4">
+      When you use the same product description as every other retailer stocking that item, Google has no reason to rank your page above theirs. Worse, the manufacturer's own website — typically with higher domain authority — will outrank all of you.
+    </p>
+    <p class="mb-4">
+      Duplicate content doesn't trigger a "penalty" in the formal sense, but it does mean Google picks one canonical version to rank and suppresses the rest. If 20 retailers all use the same 150-word Ercol description, 19 of them are invisible in search for that product.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">The Anatomy of an SEO-Optimised Furniture Description</h2>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">1. A Keyword-Targeted Opening</h3>
+    <p class="mb-4">
+      Start with what the buyer is looking for, not the product name. Instead of "The Ercol Marino 3-Seater Sofa features...", try "Looking for a compact mid-century sofa that suits a smaller living room? The Marino 3-seater from Ercol combines clean lines with deep comfort..."
+    </p>
+    <p class="mb-4">
+      Research the <a href="/furniture-seo-keywords/" class="text-emerald hover:underline">keywords</a> people use to find this type of product. For a specific sofa, that might be "Ercol Marino sofa" but also "mid-century 3-seater sofa" and "compact sofa small living room".
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">2. Benefits Before Features</h3>
+    <p class="mb-4">
+      Furniture buyers care about how a piece will look and function in their home. Lead with benefits: "The deep seat cushions are designed for evening lounging, not just perching" rather than "Seat depth: 55cm." Include the specifications too — but make the prose do the selling.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">3. Unique Details the Manufacturer Omits</h3>
+    <p class="mb-4">
+      This is your competitive advantage. Add information that only someone who has physically handled the product (or done extensive research) would know:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>How the fabric feels — "the boucle texture is soft without being delicate; it handles pet claws better than velvet"</li>
+      <li>Assembly experience — "arrives in two boxes, assembly takes approximately 20 minutes with two people"</li>
+      <li>How it fits in a real room — "at 195cm wide, it fits comfortably in a standard UK terraced-house living room with space for a side table"</li>
+      <li>Comparison to similar products — "firmer than the Habitat Hendricks, softer than the IKEA Landskrona"</li>
+    </ul>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">4. Structured Specifications</h3>
+    <p class="mb-4">
+      Below the prose description, include a clean specifications section. Use a consistent format across all products: dimensions (W×D×H), materials, weight, weight capacity, colour options, care instructions, warranty, and delivery information. This structured content helps search engines understand the product attributes and can appear in rich results.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">5. Product Schema Markup</h3>
+    <p class="mb-4">
+      Every product page needs JSON-LD Product schema including name, description, image, brand, SKU, price (with currency), availability, and condition. If you have customer reviews, add AggregateRating. This enables rich product snippets in search results — the star ratings, price, and availability labels that dramatically increase click-through rates.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Common Product Description Mistakes</h2>
+
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Keyword stuffing:</strong> "This oak dining table is the perfect oak dining table for anyone looking for an oak dining table" — this hasn't worked since 2012</li>
+      <li><strong>Zero-content product pages:</strong> a title, a price, and a photo with no description at all</li>
+      <li><strong>Identical descriptions for variations:</strong> the grey velvet version and the blue velvet version need at least partially differentiated content</li>
+      <li><strong>Ignoring alt text on product images:</strong> "IMG_4521.jpg" tells search engines nothing. "Grey velvet 3-seater Chesterfield sofa — front view" is far better</li>
+      <li><strong>No internal links:</strong> each product page should link to its parent category, related products, and any relevant buying guides</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Scaling Unique Descriptions</h2>
+
+    <p class="mb-4">
+      If you have hundreds of products, rewriting every description at once isn't feasible. Prioritise by commercial value:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Tier 1 (rewrite first):</strong> your top 20% of products by revenue or search traffic — these earn the most from improved rankings</li>
+      <li><strong>Tier 2 (rewrite next):</strong> category pages and product pages currently ranking on page 2 of Google — small improvements here yield big gains</li>
+      <li><strong>Tier 3 (batch rewrite):</strong> the long tail of your catalogue — use a template structure to speed up writing while ensuring each page has at least 150 words of unique content</li>
+    </ul>
+
+    <CTABar text="Need help rewriting your furniture product descriptions?" />
+
+    <Related pages={related} />
+    <ContactForm heading="Get SEO-Optimised Product Descriptions" />
+  </article>
+</Base>

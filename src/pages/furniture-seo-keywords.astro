@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/furniture-seo-keywords/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Furniture SEO Keywords: How to Find What Your Customers Search For',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What are the most searched furniture keywords?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The highest-volume furniture keywords are broad product terms like "sofas", "dining tables", and "beds". However, these are extremely competitive. More actionable targets for individual retailers include long-tail variations like "oak extending dining table seats 8", "velvet corner sofa with chaise", or location-modified terms like "furniture store Manchester".' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How many keywords should a furniture store target?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Every indexable page on your site should target a primary keyword and 2-3 closely related secondary keywords. A furniture store with 50 category/subcategory pages, 200 product pages, and 20 blog posts should be targeting 250+ unique keyword clusters. Start with your top 20-30 commercial pages and expand from there.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Should I target brand names in my furniture keywords?',
+        acceptedAnswer: { '@type': 'Answer', text: 'If you are an authorised stockist, absolutely. Terms like "Ercol dining chairs stockist" or "G Plan sofas sale" carry strong buying intent and lower competition. Create dedicated brand landing pages with unique content about each brand you carry. Do not target brand terms for brands you do not stock — this wastes crawl budget and frustrates users.' },
+      },
+    ],
+  },
+];
+---
+<Base
+  title="Furniture SEO Keywords: How to Find What Customers Search For"
+  description="A complete guide to keyword research for furniture retailers. Learn how to find, evaluate, and target the search terms that drive traffic and sales for furniture businesses."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Furniture SEO Keywords' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Furniture SEO Keywords: How to Find What Your Customers Search For</h1>
+
+    <p class="text-lg mb-6">
+      Keyword research is the foundation of any <a href="/" class="text-emerald hover:underline">furniture store SEO</a> strategy. Without understanding what your potential customers actually type into Google, you're optimising blind. This guide walks through how to research, evaluate, and prioritise keywords for a furniture retail business.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Understanding Furniture Search Intent</h2>
+
+    <p class="mb-4">
+      Furniture keywords fall into distinct intent categories, and each one needs a different type of page:
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Transactional Keywords</h3>
+    <p class="mb-4">
+      These indicate strong buying intent: "buy oak dining table", "leather sofa sale", "corner sofa free delivery". Map these to product and category pages. The searcher is ready to purchase — your page needs to make it easy.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Commercial Investigation</h3>
+    <p class="mb-4">
+      The buyer is comparing options: "best sofas for small living rooms", "solid wood vs veneer furniture", "DFS vs SCS quality". These need comparison content, buying guides, or well-structured category pages that help the shopper narrow down choices.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Informational Keywords</h3>
+    <p class="mb-4">
+      The searcher wants to learn: "how to measure for a corner sofa", "how to clean velvet upholstery", "what wood is best for a dining table". These are blog/guide content opportunities. They won't convert immediately, but they build trust and capture email addresses.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Local Keywords</h3>
+    <p class="mb-4">
+      Location-modified searches: "furniture store Bristol", "sofa showroom near me", "dining table shops Manchester". These need <a href="/local-seo-furniture-stores/" class="text-emerald hover:underline">local SEO</a> treatment — Google Business Profile, local landing pages, and NAP consistency.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">How to Research Furniture Keywords</h2>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Step 1: Seed List from Your Catalogue</h3>
+    <p class="mb-4">
+      Start with your product categories and types. List every type of furniture you sell: sofas, beds, dining tables, wardrobes, desks, bookcases, coffee tables, sideboards. Then add modifiers: material (oak, walnut, leather, velvet), style (modern, Scandinavian, industrial, traditional), size (2-seater, king size, extending), and feature (reclining, storage, adjustable).
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Step 2: Expand with Tools</h3>
+    <p class="mb-4">
+      Feed your seed terms into keyword research tools (Ahrefs, SEMrush, Google Keyword Planner, or free alternatives like Ubersuggest). For each seed term, export the keyword suggestions and filter by:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Volume:</strong> anything above 10 monthly searches is worth considering for a dedicated page</li>
+      <li><strong>Keyword difficulty:</strong> prioritise KD under 30 for faster wins</li>
+      <li><strong>Commercial intent:</strong> keywords with CPC data indicate that advertisers pay for these clicks — a proxy for commercial value</li>
+    </ul>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Step 3: Analyse Google Search Console</h3>
+    <p class="mb-4">
+      If your site already exists, Google Search Console is your best data source. Check the Search Results report (Performance > Search Results) to see which queries already trigger your pages. Look for:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>High impressions, low clicks:</strong> you're ranking but not earning clicks — title/description may need rewriting</li>
+      <li><strong>Positions 5-20:</strong> "striking distance" keywords where small improvements could push you to page one</li>
+      <li><strong>Unexpected queries:</strong> keywords you rank for accidentally — these reveal content gaps you could fill intentionally</li>
+    </ul>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Step 4: Competitor Gap Analysis</h3>
+    <p class="mb-4">
+      Identify 3-5 competing furniture retailers (both local competitors and aspirational ones). In Ahrefs or SEMrush, run a "content gap" analysis: what keywords do they rank for that you don't? This reveals pages you need to create.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Keyword Mapping: Assigning Terms to Pages</h2>
+
+    <p class="mb-4">
+      Every keyword needs a home — a single page on your site that's the best match for that search intent. Create a spreadsheet mapping:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>Primary keyword → page URL</li>
+      <li>Secondary keywords (2-3 variations) → same page</li>
+      <li>Content type needed (product page, category page, guide, blog post)</li>
+      <li>Current ranking position (if any)</li>
+      <li>Priority (based on volume × intent × achievability)</li>
+    </ul>
+    <p class="mb-4">
+      The rule: one primary keyword per page. If two pages target the same term, they cannibalise each other and neither ranks as well as a single focused page would.
+    </p>
+
+    <CTABar text="Need help building a keyword strategy for your furniture business?" />
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Frequently Asked Questions</h2>
+
+    <div class="space-y-6 mb-12">
+      <div>
+        <h3 class="font-semibold mb-2">What are the most searched furniture keywords?</h3>
+        <p class="text-slate-600">The highest-volume furniture keywords are broad product terms like "sofas", "dining tables", and "beds". However, these are extremely competitive. More actionable targets for individual retailers include long-tail variations like "oak extending dining table seats 8", "velvet corner sofa with chaise", or location-modified terms like "furniture store Manchester".</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">How many keywords should a furniture store target?</h3>
+        <p class="text-slate-600">Every indexable page on your site should target a primary keyword and 2-3 closely related secondary keywords. A furniture store with 50 category/subcategory pages, 200 product pages, and 20 blog posts should be targeting 250+ unique keyword clusters. Start with your top 20-30 commercial pages and expand from there.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Should I target brand names in my furniture keywords?</h3>
+        <p class="text-slate-600">If you are an authorised stockist, absolutely. Terms like "Ercol dining chairs stockist" or "G Plan sofas sale" carry strong buying intent and lower competition. Create dedicated brand landing pages with unique content. Do not target brand terms for brands you do not stock.</p>
+      </div>
+    </div>
+
+    <Related pages={related} />
+    <ContactForm heading="Get Expert Keyword Research for Your Furniture Store" />
+  </article>
+</Base>
