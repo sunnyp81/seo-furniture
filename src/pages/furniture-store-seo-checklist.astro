@@ -1,0 +1,240 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { SPOKES } from '../data/site';
+
+const checklistRelated = SPOKES.filter(s =>
+  ['/furniture-store-seo/', '/furniture-website-seo/', '/local-seo-furniture-stores/'].includes(s.href)
+);
+
+const checklistItems = [
+  'Claim and fully optimise your Google Business Profile',
+  'Ensure NAP consistency across all online directories and citations',
+  'Run a technical SEO audit (crawl errors, broken links, site speed)',
+  'Compress and lazy-load all product images',
+  'Write unique product descriptions for your top 50 products',
+  'Add 300-500 words of editorial content to every category page',
+  'Implement BreadcrumbList schema on every page',
+  'Add Product + Offer schema to all product pages',
+  'Research and map primary keywords to every indexable page',
+  'Set canonical tags on all faceted navigation URLs',
+  'Create a blog content calendar targeting informational keywords',
+  'Build or update your XML sitemap and submit to Search Console',
+  'Optimise title tags (under 60 characters, include primary keyword)',
+  'Write compelling meta descriptions (under 155 characters, include CTA)',
+  'Fix all broken internal links and 404 pages',
+  'Add internal links from blog posts to relevant product/category pages',
+  'Set up Google Search Console and monitor weekly',
+  'Request customer reviews on Google after every delivery',
+  'Create location-specific landing pages for each showroom',
+  'Audit Core Web Vitals and fix any failing metrics',
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Furniture Store SEO Checklist: 20 Tasks to Complete',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Furniture Store SEO Checklist',
+    numberOfItems: checklistItems.length,
+    itemListElement: checklistItems.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item,
+    })),
+  },
+];
+---
+<Base
+  title="Furniture Store SEO Checklist: 20 Essential Tasks"
+  description="A practical SEO checklist for furniture retailers. 20 actionable tasks covering technical SEO, content, local search, and ongoing optimisation for furniture stores."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Furniture Store SEO Checklist' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Furniture Store SEO Checklist: 20 Tasks Every Retailer Should Complete</h1>
+
+    <p class="text-lg mb-6">
+      This checklist distils the most important <a href="/" class="text-emerald hover:underline">SEO for furniture stores</a> actions into a practical, prioritised list. Work through it top to bottom — the items are roughly ordered by impact. Each task links to deeper guidance where available.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Local SEO Foundation</h2>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">1.</span>
+        <div>
+          <p class="font-semibold">Claim and fully optimise your Google Business Profile</p>
+          <p class="text-sm text-slate-500 mt-1">Complete every field: categories, hours, description, products, photos. This is the single highest-impact action for a furniture showroom. See the <a href="/local-seo-furniture-stores/" class="text-emerald hover:underline">local SEO guide</a> for details.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">2.</span>
+        <div>
+          <p class="font-semibold">Ensure NAP consistency across all online directories</p>
+          <p class="text-sm text-slate-500 mt-1">Your business name, address, and phone number must be identical everywhere: website, GBP, Yell, Facebook, industry directories. Even "Road" vs "Rd" matters.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Technical SEO</h2>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">3.</span>
+        <div>
+          <p class="font-semibold">Run a technical SEO audit</p>
+          <p class="text-sm text-slate-500 mt-1">Use Screaming Frog or Sitebulb to crawl your site. Fix crawl errors, broken internal links, redirect chains, and missing meta data. See the <a href="/furniture-website-seo/" class="text-emerald hover:underline">furniture website SEO guide</a>.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">4.</span>
+        <div>
+          <p class="font-semibold">Compress and lazy-load all product images</p>
+          <p class="text-sm text-slate-500 mt-1">Serve WebP format, implement responsive srcset, and lazy-load below-the-fold images. This is typically the biggest page speed win for furniture sites.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">5.</span>
+        <div>
+          <p class="font-semibold">Set canonical tags on all faceted navigation URLs</p>
+          <p class="text-sm text-slate-500 mt-1">Prevent colour/material/price filter combinations from creating thousands of duplicate pages. Only index filter combinations with genuine search volume.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">6.</span>
+        <div>
+          <p class="font-semibold">Implement structured data on every page</p>
+          <p class="text-sm text-slate-500 mt-1">BreadcrumbList everywhere, Product + Offer on product pages, LocalBusiness on contact/showroom pages, FAQPage on guides with FAQ sections.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">7.</span>
+        <div>
+          <p class="font-semibold">Build or update your XML sitemap and submit to Search Console</p>
+          <p class="text-sm text-slate-500 mt-1">Include all indexable pages, exclude noindexed facet URLs. Submit via Google Search Console and Bing Webmaster Tools.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">8.</span>
+        <div>
+          <p class="font-semibold">Audit Core Web Vitals and fix failing metrics</p>
+          <p class="text-sm text-slate-500 mt-1">LCP under 2.5s, CLS under 0.1, INP under 200ms. Run PageSpeed Insights on your homepage, top category page, and a product page.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">9.</span>
+        <div>
+          <p class="font-semibold">Fix all broken internal links and 404 pages</p>
+          <p class="text-sm text-slate-500 mt-1">Discontinued products should redirect to alternatives or parent categories, not 404. Crawl monthly to catch new breakages.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Content Optimisation</h2>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">10.</span>
+        <div>
+          <p class="font-semibold">Write unique product descriptions for your top 50 products</p>
+          <p class="text-sm text-slate-500 mt-1">Start with your highest-revenue products. Replace manufacturer copy with original descriptions that include benefits, unique details, and natural keyword usage. See the <a href="/furniture-product-description-seo/" class="text-emerald hover:underline">product description guide</a>.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">11.</span>
+        <div>
+          <p class="font-semibold">Add editorial content to every category page</p>
+          <p class="text-sm text-slate-500 mt-1">300-500 words per category: buying guidance, material comparisons, size advice, and links to related subcategories and guides.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">12.</span>
+        <div>
+          <p class="font-semibold">Research and map keywords to every indexable page</p>
+          <p class="text-sm text-slate-500 mt-1">One primary keyword per page, 2-3 secondary keywords. Map in a spreadsheet: URL → keyword → current ranking → priority. See the <a href="/furniture-seo-keywords/" class="text-emerald hover:underline">keyword research guide</a>.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">13.</span>
+        <div>
+          <p class="font-semibold">Optimise title tags</p>
+          <p class="text-sm text-slate-500 mt-1">Under 60 characters, primary keyword near the front, compelling enough to earn the click. "Corner Sofas | Free UK Delivery | [Brand]" beats "Home > Living > Sofas > Corner".</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">14.</span>
+        <div>
+          <p class="font-semibold">Write compelling meta descriptions</p>
+          <p class="text-sm text-slate-500 mt-1">Under 155 characters, include a value proposition and CTA. "Shop our collection of 50+ corner sofas with free delivery. Velvet, leather & fabric options from £599."</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">15.</span>
+        <div>
+          <p class="font-semibold">Add internal links from blog posts to products and categories</p>
+          <p class="text-sm text-slate-500 mt-1">Every blog post should link to at least 2-3 relevant commercial pages. A post about "choosing a dining table" should link to your dining tables category.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">16.</span>
+        <div>
+          <p class="font-semibold">Create a blog content calendar</p>
+          <p class="text-sm text-slate-500 mt-1">Target informational keywords: buying guides, care instructions, room styling ideas, material comparisons. Aim for 2-4 posts per month.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Ongoing Optimisation</h2>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">17.</span>
+        <div>
+          <p class="font-semibold">Set up Google Search Console and monitor weekly</p>
+          <p class="text-sm text-slate-500 mt-1">Check for crawl errors, indexation issues, and manual actions. Review the Performance report for ranking trends and CTR opportunities.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">18.</span>
+        <div>
+          <p class="font-semibold">Request customer reviews on Google after every delivery</p>
+          <p class="text-sm text-slate-500 mt-1">Send a follow-up email 2-3 days after delivery with a direct link to your Google review page. Reviews influence both local rankings and click-through rates.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">19.</span>
+        <div>
+          <p class="font-semibold">Create location-specific landing pages for each showroom</p>
+          <p class="text-sm text-slate-500 mt-1">Unique content per location: address, hours, photos, delivery area, featured brands. Match your GBP listing exactly.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 items-start p-4 bg-surface rounded-lg">
+        <span class="text-emerald font-bold text-lg mt-0.5">20.</span>
+        <div>
+          <p class="font-semibold">Audit and refresh content quarterly</p>
+          <p class="text-sm text-slate-500 mt-1">Review your top 20 pages by traffic every quarter. Update dates, refresh statistics, add new sections, and improve internal linking as your site grows.</p>
+        </div>
+      </div>
+    </div>
+
+    <CTABar text="Want expert help working through this checklist?" />
+
+    <Related pages={checklistRelated} />
+    <ContactForm heading="Get Help Implementing Your Furniture SEO Checklist" />
+  </article>
+</Base>

@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/local-seo-furniture-stores/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Local SEO for Furniture Stores: Google Maps, GBP & Local Pack Rankings',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Rank a Furniture Store in Google Local Pack',
+    step: [
+      { '@type': 'HowToStep', name: 'Claim and optimise Google Business Profile', text: 'Verify ownership, complete every field, select accurate categories, and add high-quality showroom photos.' },
+      { '@type': 'HowToStep', name: 'Build local citations', text: 'Ensure your business name, address, and phone number are consistent across directories, social profiles, and industry listings.' },
+      { '@type': 'HowToStep', name: 'Generate customer reviews', text: 'Implement a post-purchase review request process and respond to every review — positive or negative.' },
+      { '@type': 'HowToStep', name: 'Create location-specific content', text: 'Build landing pages for each showroom location with unique content about the store, local delivery areas, and nearby attractions.' },
+    ],
+  },
+];
+---
+<Base
+  title="Local SEO for Furniture Stores: Maps, GBP & Local Rankings"
+  description="How furniture stores with physical showrooms can rank in Google Maps and the local pack. Covers Google Business Profile, citations, reviews, and local content strategy."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Local SEO for Furniture Stores' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Local SEO for Furniture Stores: Google Maps, GBP & Local Pack Rankings</h1>
+
+    <p class="text-lg mb-6">
+      If you operate a furniture showroom, local SEO is arguably more important than traditional organic rankings. When someone searches "furniture store near me" or "sofa shop [city]", the Google local pack (the map with three business listings) appears above all organic results. Getting into that pack for your area is the highest-value <a href="/" class="text-emerald hover:underline">SEO for furniture stores</a> objective you can pursue.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Google Business Profile: Your Most Important Asset</h2>
+
+    <p class="mb-4">
+      Your Google Business Profile (GBP, formerly Google My Business) is the single biggest factor in local pack rankings. Treat it as seriously as your website homepage.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Complete Every Field</h3>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Business name:</strong> your actual business name, nothing extra (don't stuff keywords like "Best Furniture Store London")</li>
+      <li><strong>Primary category:</strong> "Furniture Store" — this is critical. Secondary categories might include "Home Furnishing Store", "Office Furniture Store", "Kitchen Furniture Store"</li>
+      <li><strong>Address:</strong> must match your website and all directory listings exactly</li>
+      <li><strong>Phone number:</strong> use a local number, not a call tracking number that changes</li>
+      <li><strong>Business hours:</strong> keep these updated, including bank holiday hours</li>
+      <li><strong>Website URL:</strong> link to your homepage or a location-specific landing page</li>
+      <li><strong>Business description:</strong> 750 characters to describe your store — include your product range, service area, and what makes you different</li>
+      <li><strong>Products:</strong> add your main product categories with photos and price ranges</li>
+    </ul>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Photos Make a Measurable Difference</h3>
+    <p class="mb-4">
+      Google's own data shows that businesses with photos receive 42% more direction requests and 35% more click-throughs to their website. For a furniture showroom, this is even more pronounced — shoppers want to see what the store looks like before visiting.
+    </p>
+    <p class="mb-4">
+      Upload: exterior shots from different angles (helps Google match your location), interior showroom photos, photos of specific displays and product ranges, staff photos (builds trust), and photos of delivery vans or the delivery process. Aim for 20+ photos and add 2-3 new ones monthly.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Local Citations: Consistency is Everything</h2>
+
+    <p class="mb-4">
+      A citation is any online mention of your business name, address, and phone number (NAP). Consistent NAP across the web is a key local ranking signal. Inconsistencies — even small ones like "Road" vs "Rd" — dilute your local authority.
+    </p>
+    <p class="mb-4">
+      Priority citation sources for UK furniture stores:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>Yell.com, Thomson Local, Yelp UK</li>
+      <li>Facebook Business Page, Instagram Business Profile</li>
+      <li>Industry directories: FurnitureVillage-style aggregators, local interiors directories</li>
+      <li>Local business directories: Chamber of Commerce, local council business directories</li>
+      <li>Apple Maps, Bing Places, Waze</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Reviews: The Social Proof Engine</h2>
+
+    <p class="mb-4">
+      Review quantity, quality, and recency all influence local rankings. More importantly, reviews directly influence whether a potential customer decides to visit your showroom.
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Ask at the right moment:</strong> after delivery and setup, when the customer is happiest with their new furniture. Send a follow-up email with a direct link to your Google review page</li>
+      <li><strong>Respond to every review:</strong> thank positive reviewers specifically (mention their purchase). Address negative reviews professionally and offer to resolve the issue</li>
+      <li><strong>Don't incentivise reviews:</strong> offering discounts for reviews violates Google's guidelines and risks profile suspension</li>
+      <li><strong>Diversify review platforms:</strong> Google reviews are primary, but also build presence on Trustpilot, Facebook, and Houzz (for higher-end furniture)</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Location Pages on Your Website</h2>
+
+    <p class="mb-4">
+      If you operate multiple showrooms, create a dedicated landing page for each location on your website. Each page should include:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>The showroom address, phone number, and opening hours (matching your GBP exactly)</li>
+      <li>An embedded Google Map</li>
+      <li>Unique content about that specific location — what brands or ranges are displayed, parking information, nearby landmarks</li>
+      <li>Photos of that specific showroom (not stock photos shared across all locations)</li>
+      <li>Delivery area information — which postcodes or areas this showroom serves</li>
+      <li>LocalBusiness schema markup with the location-specific details</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Local Content Strategy</h2>
+
+    <p class="mb-4">
+      Beyond location pages, create content that targets local search intent:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>"Best furniture stores in [city]" — yes, you can write this as a blog post and include yourself alongside competitors. Done well, it ranks for the query and positions you as the authority</li>
+      <li>Local interior design collaborations — partner with a local interior designer for a blog series or showroom event, generating content and backlinks</li>
+      <li>Local delivery and installation guides — "Furniture delivery in Greater Manchester: what to expect" with practical logistics information</li>
+    </ul>
+
+    <CTABar text="Need help getting your furniture store into the local pack?" />
+
+    <Related pages={related} />
+    <ContactForm heading="Get Help With Local SEO for Your Furniture Store" />
+  </article>
+</Base>

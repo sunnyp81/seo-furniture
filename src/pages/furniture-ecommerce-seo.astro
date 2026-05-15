@@ -1,0 +1,144 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/furniture-ecommerce-seo/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Furniture Ecommerce SEO: Category Architecture, Product Pages & Faceted Nav',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How should a furniture ecommerce site handle product variations?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Use a single product page with selectable variations (colour, size, material) rather than creating separate URLs for each combination. If a variation has genuine search volume (e.g., "grey corner sofa" vs "blue corner sofa"), create a dedicated page with unique content. Use canonical tags to point non-indexed variations to the primary product URL.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Should discontinued furniture products be redirected or removed?',
+        acceptedAnswer: { '@type': 'Answer', text: 'If the page has backlinks or traffic, 301 redirect it to the most relevant alternative product or its parent category. If the product will return (seasonal ranges), keep the page live with an out-of-stock notice and a notification sign-up. Only 404 products with zero traffic, zero backlinks, and no chance of return.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How many products should a furniture category page show?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Display 24-48 products per page for the best balance of user experience and page speed. Use lazy loading for product images below the fold. If you have more products than this, implement pagination with rel=next/prev (though Google has deprecated it, clean pagination URLs are still crawled) or a "load more" button that updates the URL.' },
+      },
+    ],
+  },
+];
+---
+<Base
+  title="Furniture Ecommerce SEO: Category Architecture & Product Pages"
+  description="SEO strategies for furniture ecommerce stores. Covers category page architecture, faceted navigation, product page optimisation, and handling seasonal range changes."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Furniture Ecommerce SEO' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Furniture Ecommerce SEO: Category Architecture, Product Pages & Faceted Navigation</h1>
+
+    <p class="text-lg mb-6">
+      Running a furniture ecommerce store presents unique SEO challenges that generic ecommerce advice doesn't address. Large product catalogues, high-resolution imagery, seasonal range changes, and complex filtering systems all require furniture-specific strategies. This guide covers the technical and content approaches that drive organic traffic for <a href="/" class="text-emerald hover:underline">furniture</a> ecommerce sites.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Category Architecture That Ranks</h2>
+
+    <p class="mb-4">
+      Your category structure is the backbone of your ecommerce SEO. It determines which keywords your site can rank for and how search engines understand your product hierarchy. The key principle: every category page should target a keyword that people actually search for.
+    </p>
+    <p class="mb-4">
+      A furniture ecommerce site should organise products by room then furniture type then sub-type. For example: Living Room then Sofas then Corner Sofas. Each level of this hierarchy is a keyword opportunity:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>"Living room furniture" — high volume, competitive, targets the top-level category</li>
+      <li>"Sofas" — high volume, your primary subcategory targets these</li>
+      <li>"Corner sofas" — mid volume, less competitive, perfect for a sub-subcategory</li>
+      <li>"Grey velvet corner sofas" — low volume, very specific, could be a filtered view that's worth indexing</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Faceted Navigation: The Make-or-Break Issue</h2>
+
+    <p class="mb-4">
+      Faceted navigation lets shoppers filter by colour, material, price, size, and brand. It's essential for usability on a furniture site — but without careful SEO handling, it creates an explosion of indexable URLs with thin, duplicate content.
+    </p>
+    <p class="mb-4">
+      A "Sofas" page with filters for 10 colours x 8 materials x 5 sizes x 3 price ranges creates 1,200 possible URL combinations. Most of these serve zero or one product and provide no unique value to search engines.
+    </p>
+    <p class="mb-4">
+      The strategic approach:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Identify valuable filter combinations</strong> using <a href="/furniture-seo-keywords/" class="text-emerald hover:underline">keyword research</a>. "Leather sofas" has genuine search volume — make it a clean, indexable category. "Leather sofas under £500 in blue" does not — noindex or canonicalise it</li>
+      <li><strong>Use clean URLs for indexable filters:</strong> `/sofas/leather/` not `/sofas/?material=leather&sort=price`</li>
+      <li><strong>Block multi-select and sort-order URLs from crawling</strong> via robots.txt or meta robots noindex</li>
+      <li><strong>Add unique content to every indexable filter page:</strong> the "Leather Sofas" page needs its own H1, introductory text, and potentially FAQ content</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Product Page SEO for Furniture Ecommerce</h2>
+
+    <p class="mb-4">
+      Every product page on a furniture ecommerce site should include:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Unique <a href="/furniture-product-description-seo/" class="text-emerald hover:underline">product description</a></strong> — 200+ words minimum, ideally 300-500 for hero products</li>
+      <li><strong>Multiple high-quality images</strong> with descriptive alt text — room scene, detail shots, dimensions overlaid</li>
+      <li><strong>Structured data:</strong> Product schema with price, availability, brand, SKU, and review data</li>
+      <li><strong>Internal links:</strong> breadcrumb to parent category, "you may also like" related products, link to relevant buying guide</li>
+      <li><strong>Customer reviews on-page</strong> — user-generated content is unique by definition and adds keyword-rich text</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Handling Seasonal Range Changes</h2>
+
+    <p class="mb-4">
+      Furniture retailers regularly add and remove products as ranges change. Poor handling of discontinued products creates crawl errors, broken links, and wasted link equity. Your approach should depend on the product's SEO value:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Products with traffic or backlinks:</strong> 301 redirect to the closest alternative product or parent category page</li>
+      <li><strong>Seasonal products that will return:</strong> keep the page live with "out of stock" messaging and an email notification sign-up. This preserves rankings for when the product returns</li>
+      <li><strong>Low-value discontinued products:</strong> 301 redirect to parent category. Don't let these 404</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Site Speed for Image-Heavy Catalogues</h2>
+
+    <p class="mb-4">
+      Furniture ecommerce sites are among the most image-heavy on the web. Every product needs multiple high-resolution photos. This makes page speed optimisation critical for both rankings and user experience. Refer to the <a href="/furniture-website-seo/" class="text-emerald hover:underline">furniture website SEO</a> guide for detailed technical recommendations on image optimisation, Core Web Vitals, and performance tuning.
+    </p>
+
+    <CTABar text="Need expert SEO for your furniture ecommerce store?" />
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Frequently Asked Questions</h2>
+
+    <div class="space-y-6 mb-12">
+      <div>
+        <h3 class="font-semibold mb-2">How should a furniture ecommerce site handle product variations?</h3>
+        <p class="text-slate-600">Use a single product page with selectable variations rather than separate URLs for each combination. If a variation has genuine search volume (e.g., "grey corner sofa"), create a dedicated page with unique content. Use canonical tags to point non-indexed variations to the primary product URL.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Should discontinued furniture products be redirected or removed?</h3>
+        <p class="text-slate-600">If the page has backlinks or traffic, 301 redirect to the most relevant alternative or parent category. If the product will return seasonally, keep the page live with out-of-stock messaging. Only 404 products with zero traffic and zero backlinks.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">How many products should a furniture category page show?</h3>
+        <p class="text-slate-600">24-48 products per page balances UX and speed. Lazy load images below the fold. For larger catalogues, use pagination or a "load more" button that updates the URL.</p>
+      </div>
+    </div>
+
+    <Related pages={related} />
+    <ContactForm heading="Get Ecommerce SEO Help for Your Furniture Store" />
+  </article>
+</Base>
