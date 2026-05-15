@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { SITE, SPOKES } from '../data/site';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      url: `${SITE.url}/contact/`,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.description,
+    serviceType: 'Furniture Store SEO',
+    areaServed: { '@type': 'Place', name: 'Worldwide' },
+  },
+];
+---
+<Base
+  title="SEO for Furniture Stores | Grow Organic Traffic & Sales"
+  description="Expert SEO strategies for furniture retailers. Increase your store's search visibility, drive qualified traffic, and turn browsers into buyers."
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="bg-navy text-white py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white">SEO for Furniture Stores</h1>
+      <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+        Furniture shoppers start on Google. If your store isn't visible when they search for sofas, dining tables, or bedroom sets, you're handing those sales to a competitor. Specialist SEO changes that.
+      </p>
+      <a href="/contact/" class="inline-block bg-emerald hover:bg-emerald-dark text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors">
+        Get a Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="max-w-3xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold mb-6">Why Furniture Retailers Struggle with SEO</h2>
+    <p class="text-lg mb-4">
+      The furniture industry has a unique SEO problem. Your product catalogue might contain hundreds or thousands of items, each with variations in colour, material, and size. Search engines need to understand every page — and most furniture websites make that harder than it needs to be.
+    </p>
+    <p class="mb-4">
+      Common issues include duplicate product descriptions copied from manufacturers, thin category pages that list products without any supporting content, and poor internal linking between related collections. Add in the challenge of competing against marketplace giants like Wayfair, IKEA, and Amazon, and it's clear why most independent furniture retailers struggle to gain organic visibility.
+    </p>
+    <p class="mb-4">
+      Then there's the local dimension. If you operate a physical showroom, you need to appear in Google's local pack and Maps results for "[furniture store] + [city]" queries. Most furniture businesses neglect their Google Business Profile or fail to build the local citations that drive map rankings.
+    </p>
+    <p>
+      The good news: because most furniture retailers underinvest in SEO, the opportunity is significant. Keyword difficulty across furniture SEO terms is remarkably low, meaning a focused strategy can deliver results faster than in more competitive industries.
+    </p>
+  </section>
+
+  <!-- Spoke Summaries -->
+  <section id="guides" class="bg-surface py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4 text-center">Furniture SEO Guides</h2>
+      <p class="text-center text-slate-500 mb-12 max-w-2xl mx-auto">Everything you need to understand and implement SEO for your furniture business, from keyword research to local visibility.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {SPOKES.map(spoke => (
+          <a href={spoke.href}
+            class="bg-white p-6 rounded-xl border border-slate-200 hover:border-emerald hover:-translate-y-0.5 transition-all no-underline text-inherit flex flex-col gap-2">
+            <h3 class="text-lg font-semibold">{spoke.title}</h3>
+            <p class="text-sm text-slate-500 flex-1">{spoke.description}</p>
+            <span class="text-emerald text-sm font-medium mt-2">Read guide &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Furniture SEO Works -->
+  <section class="max-w-3xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold mb-6">What Makes Furniture SEO Different</h2>
+    <p class="mb-4">
+      Furniture is a high-consideration purchase. Buyers research extensively before committing — comparing materials, reading reviews, checking dimensions, and visiting showrooms. This research phase generates enormous search volume across a wide range of informational and commercial queries.
+    </p>
+    <p class="mb-4">
+      Unlike impulse-buy categories, furniture shoppers often take days or weeks to decide. That means every touchpoint matters. Ranking for "best leather sofas UK" puts your brand in front of a buyer who might visit your showroom three weeks later. Ranking for "how to choose a dining table size" builds trust with someone who hasn't started shortlisting retailers yet.
+    </p>
+    <p class="mb-4">
+      A well-executed <a href="/furniture-store-seo/" class="text-emerald hover:underline">furniture store SEO</a> strategy captures traffic at every stage of this journey. <a href="/furniture-seo-keywords/" class="text-emerald hover:underline">Keyword research</a> identifies what your customers actually search for. <a href="/furniture-website-seo/" class="text-emerald hover:underline">Website optimisation</a> ensures search engines can crawl and index your catalogue. <a href="/local-seo-furniture-stores/" class="text-emerald hover:underline">Local SEO</a> drives footfall to your showroom.
+    </p>
+    <p>
+      The result: sustainable, compounding organic traffic that doesn't disappear when you stop paying for ads. Furniture retailers who invest in SEO typically see their organic channel become their highest-ROI acquisition source within 6-12 months.
+    </p>
+  </section>
+
+  <!-- Industry Benchmarks -->
+  <section class="bg-surface py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">Furniture Retail SEO: The Opportunity</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+          <div class="text-3xl font-bold text-emerald mb-2">72%</div>
+          <p class="text-sm text-slate-500">of furniture buyers start their research on a search engine</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+          <div class="text-3xl font-bold text-emerald mb-2">3-6 mo</div>
+          <p class="text-sm text-slate-500">typical timeline for measurable ranking improvements in furniture SEO</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+          <div class="text-3xl font-bold text-emerald mb-2">KD 0</div>
+          <p class="text-sm text-slate-500">keyword difficulty for most furniture SEO terms — low competition, high opportunity</p>
+        </div>
+      </div>
+      <p class="text-sm text-slate-400">
+        The 72% figure reflects general retail search behaviour reported by Google/Ipsos retail studies. KD values based on Ahrefs data for "seo for furniture stores" and related terms as of May 2026.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <div class="max-w-3xl mx-auto px-6">
+    <ContactForm />
+  </div>
+</Base>
