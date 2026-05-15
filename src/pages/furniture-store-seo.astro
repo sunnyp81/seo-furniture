@@ -1,0 +1,164 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/furniture-store-seo/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Furniture Store SEO: The Complete Guide to Ranking Your Retail Business',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How long does furniture store SEO take to show results?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Most furniture retailers see measurable ranking improvements within 3-6 months. Quick wins like Google Business Profile optimisation and fixing technical issues can show results in weeks, while content-driven strategies typically take 4-8 months to compound.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is SEO worth it for a small furniture shop?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes. Small furniture shops often benefit more from SEO than large chains because local search intent is high and competition at the local level is lower. A single sofa sale from organic search can deliver ROI that justifies months of SEO investment.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'What SEO budget should a furniture store set?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Furniture store SEO budgets typically range from £500-2,500/month depending on the scope. A local single-showroom business can start at the lower end focusing on local SEO and Google Business Profile. Multi-location or ecommerce retailers with large catalogues will need more investment in technical SEO and content.' },
+      },
+    ],
+  },
+];
+---
+<Base
+  title="Furniture Store SEO: Complete Guide to Ranking Your Business"
+  description="Learn how furniture stores can increase organic search visibility. Covers on-page SEO, technical optimisation, content strategy, and local search for furniture retailers."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Furniture Store SEO' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Furniture Store SEO: The Complete Guide to Ranking Your Retail Business</h1>
+
+    <p class="text-lg mb-6">
+      If you're a furniture retailer looking to grow organic traffic, you're in the right place. <a href="/" class="text-emerald hover:underline">SEO for furniture stores</a> is one of the highest-ROI marketing channels available — and most of your competitors are barely scratching the surface.
+    </p>
+
+    <p class="mb-4">
+      This guide covers everything a furniture store owner or marketing manager needs to know about search engine optimisation: from the fundamentals of how search engines evaluate furniture websites, through to advanced strategies for competing against marketplace giants like Wayfair and IKEA.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Why Furniture Store SEO Matters</h2>
+
+    <p class="mb-4">
+      Furniture is a research-heavy purchase. Buyers compare options across multiple websites before making a decision, and that research almost always starts with a search engine. The retailer that appears at the top of those search results gets the first impression — and often the sale.
+    </p>
+    <p class="mb-4">
+      Unlike paid advertising, organic search traffic compounds over time. A product category page that ranks well today will continue driving visitors for months or years with minimal ongoing cost. For furniture retailers operating on tight margins, that predictability is invaluable.
+    </p>
+    <p class="mb-4">
+      The furniture vertical also benefits from relatively low keyword difficulty. While finance, health, and SaaS companies battle for positions on terms with KD scores of 60-80+, furniture SEO terms frequently sit at KD 0-15. This means a well-executed strategy can deliver results faster than in most other industries.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">The Five Pillars of Furniture Store SEO</h2>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">1. Technical Foundation</h3>
+    <p class="mb-4">
+      Before investing in content or links, your <a href="/furniture-website-seo/" class="text-emerald hover:underline">furniture website</a> needs a solid technical foundation. Search engines need to be able to crawl your entire product catalogue efficiently. Common technical issues in furniture sites include:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Faceted navigation creating duplicate URLs</strong> — colour, material, and size filters can generate thousands of indexable pages with near-identical content</li>
+      <li><strong>Slow page speed from unoptimised product images</strong> — high-resolution furniture photography is essential for sales but devastating for Core Web Vitals if not properly compressed and lazy-loaded</li>
+      <li><strong>Thin or missing category page content</strong> — a page that lists 40 sofas with no supporting text gives search engines nothing to rank</li>
+      <li><strong>Broken internal links from discontinued products</strong> — furniture ranges rotate seasonally, and dead links accumulate fast</li>
+    </ul>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">2. Keyword Strategy</h3>
+    <p class="mb-4">
+      Effective <a href="/furniture-seo-keywords/" class="text-emerald hover:underline">furniture keyword research</a> goes beyond obvious product terms. Your keyword map should cover three intent layers:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Transactional:</strong> "buy oak dining table", "leather corner sofa sale" — these drive direct sales</li>
+      <li><strong>Commercial investigation:</strong> "best sofas for families with pets", "solid wood vs veneer dining table" — these capture mid-funnel researchers</li>
+      <li><strong>Informational:</strong> "how to measure for a new sofa", "what size rug for living room" — these build trust and email lists</li>
+    </ul>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">3. On-Page Content</h3>
+    <p class="mb-4">
+      Every indexable page on your site needs unique, genuinely useful content. For furniture stores, this means writing original <a href="/furniture-product-description-seo/" class="text-emerald hover:underline">product descriptions</a> (not copying from the manufacturer), adding buying guides to category pages, and creating supporting content that answers the questions furniture shoppers ask.
+    </p>
+    <p class="mb-4">
+      Category pages are where most furniture retailers leave the most SEO value on the table. A "Sofas" category page should include 300-500 words of genuine editorial content above or below the product grid: what to consider when buying a sofa, material comparisons, size guidance, and links to relevant subcategories and guides.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">4. Local Search Visibility</h3>
+    <p class="mb-4">
+      If you operate a physical showroom, <a href="/local-seo-furniture-stores/" class="text-emerald hover:underline">local SEO</a> is non-negotiable. The query "furniture store near me" has enormous volume, and Google's local pack (the map results) appears above organic listings for these searches.
+    </p>
+    <p class="mb-4">
+      Your Google Business Profile is the single most important local ranking factor. It needs complete, accurate information: business hours, photos of your showroom (updated regularly), product categories, and a steady stream of genuine customer reviews.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">5. Link Building and Authority</h3>
+    <p class="mb-4">
+      Furniture retailers have natural link-building opportunities that most don't exploit. Interior design bloggers, home renovation publications, and local business directories are all potential sources of high-quality backlinks. Sponsoring a local home show, contributing expert commentary to a regional publication, or creating a genuinely useful room-planning tool can all generate links naturally.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Competing Against Marketplace Giants</h2>
+    <p class="mb-4">
+      IKEA, Wayfair, Amazon, and DFS dominate broad furniture terms. Trying to outrank them for "sofas" is a losing battle. Instead, focus on the queries they can't win:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Long-tail product terms:</strong> "handmade reclaimed wood coffee table" beats "coffee table"</li>
+      <li><strong>Local + product combinations:</strong> "furniture store Manchester" or "bespoke kitchens Bristol"</li>
+      <li><strong>Expert content:</strong> buying guides, material comparisons, and care instructions that marketplaces don't invest in</li>
+      <li><strong>Brand + review queries:</strong> own the conversation about your brand in search results</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Measuring Furniture SEO Success</h2>
+    <p class="mb-4">
+      Track these metrics monthly to gauge whether your SEO investment is working:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Organic sessions</strong> — total traffic from non-branded organic search</li>
+      <li><strong>Keyword visibility</strong> — how many target keywords you rank in positions 1-10</li>
+      <li><strong>Organic revenue/leads</strong> — the bottom line: sales or enquiries attributed to organic search</li>
+      <li><strong>Indexed pages</strong> — are search engines finding and indexing your product catalogue?</li>
+      <li><strong>Core Web Vitals</strong> — site speed metrics that directly affect rankings</li>
+    </ul>
+
+    <CTABar text="Want an expert to handle your furniture store's SEO?" />
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Frequently Asked Questions</h2>
+
+    <div class="space-y-6 mb-12">
+      <div>
+        <h3 class="font-semibold mb-2">How long does furniture store SEO take to show results?</h3>
+        <p class="text-slate-600">Most furniture retailers see measurable ranking improvements within 3-6 months. Quick wins like Google Business Profile optimisation and fixing technical issues can show results in weeks, while content-driven strategies typically take 4-8 months to compound.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Is SEO worth it for a small furniture shop?</h3>
+        <p class="text-slate-600">Yes. Small furniture shops often benefit more from SEO than large chains because local search intent is high and competition at the local level is lower. A single sofa sale from organic search can deliver ROI that justifies months of SEO investment.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">What SEO budget should a furniture store set?</h3>
+        <p class="text-slate-600">Furniture store SEO budgets typically range from £500-2,500/month depending on the scope. A local single-showroom business can start at the lower end focusing on local SEO and Google Business Profile. Multi-location or ecommerce retailers with large catalogues will need more investment in technical SEO and content.</p>
+      </div>
+    </div>
+
+    <Related pages={related} />
+    <ContactForm heading="Get Help With Your Furniture Store's SEO" />
+  </article>
+</Base>

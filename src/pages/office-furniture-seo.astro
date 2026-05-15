@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/office-furniture-seo/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Office Furniture SEO: Reaching B2B Buyers Through Search',
+    datePublished: '2026-05-15',
+    author: { '@type': 'Organization', name: 'SEO.Furniture' },
+    publisher: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+  },
+];
+---
+<Base
+  title="Office Furniture SEO: Reaching B2B Buyers Through Search"
+  description="SEO strategies for office and contract furniture suppliers. Covers B2B keyword targeting, product page optimisation, and lead generation for commercial furniture."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Office Furniture SEO' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">Office Furniture SEO: Reaching B2B Buyers Through Search</h1>
+
+    <p class="text-lg mb-6">
+      Office and contract furniture operates in a different SEO landscape from residential retail. The buyers are procurement managers, facilities teams, and interior designers — not consumers browsing on a Sunday afternoon. Your <a href="/" class="text-emerald hover:underline">SEO for furniture stores</a> strategy needs to reflect that difference.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">How Office Furniture Search Behaviour Differs</h2>
+
+    <p class="mb-4">
+      B2B furniture buyers search differently from consumers. They use more specific, technical language: "height adjustable sit-stand desk 1600mm" rather than "standing desk". They search for bulk terms: "office chairs wholesale", "contract furniture supplier UK". And they often search by specification rather than style.
+    </p>
+    <p class="mb-4">
+      This creates an opportunity. While consumer furniture terms face stiff competition from marketplaces, B2B office furniture terms are far less competitive. A well-optimised product page targeting "acoustic office pods UK" or "hot desking furniture solutions" can rank quickly and attract high-value enquiries.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Keyword Strategy for Office Furniture</h2>
+
+    <p class="mb-4">
+      Build your <a href="/furniture-seo-keywords/" class="text-emerald hover:underline">keyword strategy</a> around these B2B intent categories:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Product + specification:</strong> "ergonomic task chair lumbar support", "boardroom table 3000mm"</li>
+      <li><strong>Product + use case:</strong> "call centre furniture", "school classroom desks and chairs"</li>
+      <li><strong>Product + buying intent:</strong> "office furniture supplier", "bulk desk order UK"</li>
+      <li><strong>Compliance and standards:</strong> "BIFMA certified office chairs", "fire-rated office furniture"</li>
+      <li><strong>Problem-solving:</strong> "how to furnish a hybrid office", "open plan office noise solutions"</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Product Page Optimisation for B2B</h2>
+
+    <p class="mb-4">
+      Office furniture <a href="/furniture-product-description-seo/" class="text-emerald hover:underline">product pages</a> need to work harder than consumer equivalents. B2B buyers want specifications, certifications, lead times, and bulk pricing information. Your product pages should include:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>Complete technical specifications in a structured format (dimensions, weight capacity, materials, certifications)</li>
+      <li>CAD files or space planning documents where relevant</li>
+      <li>Lead time and availability information</li>
+      <li>Related products (matching desk + chair + storage combinations)</li>
+      <li>Case study or installation gallery showing the product in a real office environment</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Content That Attracts Procurement Buyers</h2>
+
+    <p class="mb-4">
+      Procurement teams research extensively before requesting quotes. Content that addresses their concerns will attract them to your site:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Workspace planning guides:</strong> "How to furnish a 50-person office" with floor plans, product recommendations, and budget ranges</li>
+      <li><strong>Compliance content:</strong> guides to DSE regulations, fire safety standards for office furniture, sustainability certifications (FSC, PEFC, Cradle to Cradle)</li>
+      <li><strong>Trend reports:</strong> "Office furniture trends 2026" covering hybrid working, biophilic design, and acoustic solutions</li>
+      <li><strong>Comparison content:</strong> "Task chair vs executive chair: which does your team need?" with objective criteria</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Lead Generation Through SEO</h2>
+
+    <p class="mb-4">
+      Unlike consumer furniture where the goal is an online sale, office furniture SEO is about generating qualified leads. Optimise your conversion path:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>Every product page should have a clear "Request a Quote" CTA</li>
+      <li>Offer downloadable resources (brochures, specification sheets, space planning tools) in exchange for email addresses</li>
+      <li>Create dedicated landing pages for key sectors: education, healthcare, corporate, coworking</li>
+      <li>Add case studies with named clients (with permission) — B2B buyers want social proof from their industry</li>
+    </ul>
+
+    <CTABar text="Need help ranking your office furniture business?" />
+
+    <Related pages={related} />
+    <ContactForm heading="Get Help With Office Furniture SEO" />
+  </article>
+</Base>

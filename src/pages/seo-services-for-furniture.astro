@@ -1,0 +1,120 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Related from '../components/Related.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTABar from '../components/CTABar.astro';
+import { getRelated } from '../data/site';
+
+const related = getRelated('/seo-services-for-furniture/');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Furniture Store SEO Services',
+    provider: { '@type': 'Organization', name: 'SEO.Furniture', url: 'https://seo.furniture' },
+    serviceType: 'Search Engine Optimisation',
+    areaServed: { '@type': 'Place', name: 'Worldwide' },
+    description: 'Professional SEO services designed specifically for furniture retailers, showrooms, and ecommerce stores.',
+  },
+];
+---
+<Base
+  title="SEO Services for Furniture Stores | What to Expect"
+  description="What professional SEO services for furniture retailers include, how pricing works, and how to evaluate whether an agency understands your industry."
+  schema={schema}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <Breadcrumb crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'SEO Services for Furniture' },
+    ]} />
+
+    <h1 class="text-4xl font-bold tracking-tight mb-6">SEO Services for Furniture Stores: What to Expect</h1>
+
+    <p class="text-lg mb-6">
+      Hiring an SEO agency or consultant for your furniture business is a significant investment. This guide explains what a professional <a href="/" class="text-emerald hover:underline">furniture SEO</a> engagement typically includes, how to evaluate providers, and what results you should realistically expect.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">What Furniture SEO Services Include</h2>
+
+    <p class="mb-4">
+      A comprehensive SEO service for a furniture retailer should cover four core areas. Any provider who focuses on only one while ignoring the others is unlikely to deliver lasting results.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Technical Audit and Fixes</h3>
+    <p class="mb-4">
+      The engagement starts with a thorough technical audit of your website. For furniture sites, this means checking how your product catalogue is crawled and indexed, identifying duplicate content from faceted navigation, auditing page speed (furniture sites are image-heavy), and ensuring your site architecture makes it easy for search engines to understand your product hierarchy.
+    </p>
+    <p class="mb-4">
+      Expect the technical phase to take 2-4 weeks. The audit should produce a prioritised list of fixes with estimated impact. High-priority items typically include fixing crawl errors, implementing proper canonical tags, compressing product images, and resolving any indexation issues.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Keyword Research and Content Strategy</h3>
+    <p class="mb-4">
+      Your SEO provider should conduct thorough <a href="/furniture-seo-keywords/" class="text-emerald hover:underline">keyword research</a> specific to the furniture industry. This means mapping keywords to every commercial page on your site (categories, subcategories, key products) and identifying content gaps where new pages or guides could capture additional search traffic.
+    </p>
+    <p class="mb-4">
+      The content strategy should include a publishing calendar with topics, target keywords, and content formats. Good providers will also audit your existing content for opportunities — updating page titles, rewriting thin product descriptions, and adding FAQ sections to key landing pages.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">On-Page Optimisation</h3>
+    <p class="mb-4">
+      This is the ongoing work of improving individual pages: writing unique <a href="/furniture-product-description-seo/" class="text-emerald hover:underline">product descriptions</a>, adding structured data markup, optimising title tags and meta descriptions, improving internal linking between related products and categories, and creating or enhancing category page content.
+    </p>
+
+    <h3 class="text-xl font-bold mt-8 mb-3">Local SEO (If Applicable)</h3>
+    <p class="mb-4">
+      For furniture retailers with physical showrooms, <a href="/local-seo-furniture-stores/" class="text-emerald hover:underline">local SEO</a> should be a core component. This includes Google Business Profile optimisation, local citation building, review management strategy, and creating location-specific landing pages if you operate multiple showrooms.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">How Furniture SEO Pricing Works</h2>
+
+    <p class="mb-4">
+      SEO pricing for furniture retailers varies widely, but here's a realistic framework:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Small/local furniture shop (1 showroom):</strong> £500-1,000/month — focused on local SEO, Google Business Profile, and basic on-page fixes</li>
+      <li><strong>Mid-size retailer (2-5 locations or small ecommerce):</strong> £1,000-2,500/month — full technical SEO, content creation, local SEO across locations</li>
+      <li><strong>Large ecommerce furniture retailer:</strong> £2,500-5,000+/month — enterprise-level technical SEO, large-scale content production, link building, international SEO</li>
+    </ul>
+    <p class="mb-4">
+      Be cautious of agencies quoting significantly below these ranges. SEO that's done properly requires skilled human time — there are no shortcuts that deliver sustainable results.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">How to Evaluate an SEO Provider</h2>
+
+    <p class="mb-4">Ask these questions before signing:</p>
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Do they have furniture or retail experience?</strong> — The furniture vertical has specific challenges (image-heavy pages, seasonal ranges, faceted navigation) that generalist agencies may not understand</li>
+      <li><strong>Can they show case studies with traffic data?</strong> — Vague claims of "increased visibility" mean nothing without Google Search Console or analytics screenshots</li>
+      <li><strong>What does their reporting look like?</strong> — You should receive monthly reports showing keyword rankings, traffic trends, completed work, and planned next steps</li>
+      <li><strong>Who will actually do the work?</strong> — Some agencies sell senior consultants but deliver junior staff. Ask who your day-to-day contact will be</li>
+      <li><strong>What's the minimum contract term?</strong> — SEO takes time, so 6-month minimums are reasonable. Avoid 12+ month lock-ins with no exit clause</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Red Flags When Hiring</h2>
+
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li>Guaranteeing specific rankings ("We'll get you to #1 in 30 days")</li>
+      <li>Refusing to explain their methods</li>
+      <li>Focusing exclusively on link building without addressing technical issues or content</li>
+      <li>No mention of Google Search Console or analytics access</li>
+      <li>Pricing that seems too good to be true (£99/month "SEO packages")</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Timeline: What to Expect</h2>
+
+    <ul class="list-disc pl-6 mb-4 space-y-2">
+      <li><strong>Month 1:</strong> Technical audit, keyword research, strategy document</li>
+      <li><strong>Months 2-3:</strong> Technical fixes implemented, initial content created, on-page optimisation begins</li>
+      <li><strong>Months 3-6:</strong> Content publishing ramps up, rankings begin moving, first measurable traffic increases</li>
+      <li><strong>Months 6-12:</strong> Compounding returns — established pages climb, new content starts ranking, organic traffic becomes a predictable channel</li>
+    </ul>
+
+    <CTABar text="Looking for SEO services tailored to furniture retail?" />
+
+    <Related pages={related} />
+    <ContactForm heading="Discuss SEO Services for Your Furniture Business" />
+  </article>
+</Base>
