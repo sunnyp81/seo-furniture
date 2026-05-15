@@ -1,0 +1,21 @@
+---
+import type { SpokeMeta } from '../data/site';
+interface Props {
+  pages: SpokeMeta[];
+}
+const { pages } = Astro.props;
+---
+{pages.length > 0 && (
+  <section class="border-t border-slate-200 pt-12 mt-16">
+    <h2 class="text-xl font-bold mb-6">Related Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {pages.map(page => (
+        <a href={page.href}
+          class="p-6 border border-slate-200 rounded-xl hover:border-emerald hover:-translate-y-0.5 transition-all no-underline text-inherit flex flex-col gap-2">
+          <h3 class="text-lg font-semibold">{page.title}</h3>
+          <p class="text-sm text-slate-500">{page.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

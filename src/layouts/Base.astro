@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import { SITE } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: Record<string, unknown>[];
+  ogTitle?: string;
+}
+
+const { title, description, canonical, schema = [], ogTitle } = Astro.props;
+const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
+const displayTitle = ogTitle || title;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalUrl}>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:title" content={displayTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:site_name" content={SITE.name}>
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content={displayTitle}>
+  <meta name="twitter:description" content={description}>
+  {schema.map(s => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-navy tracking-tight">
+        SEO<span class="text-emerald">.</span>Furniture
+      </a>
+      <nav class="flex items-center gap-6">
+        <a href="/#guides" class="text-sm text-slate-600 hover:text-emerald hidden md:inline">Guides</a>
+        <a href="/furniture-store-seo-checklist/" class="text-sm text-slate-600 hover:text-emerald hidden md:inline">Checklist</a>
+        <a href="/contact/" class="bg-emerald hover:bg-emerald-dark text-white text-sm font-semibold px-5 py-2 rounded-lg transition-colors">
+          Get in Touch
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <footer class="bg-navy text-slate-400 pt-16 pb-8 mt-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div>
+          <div class="text-lg font-bold text-white mb-3">SEO<span class="text-emerald">.</span>Furniture</div>
+          <p class="text-sm">Specialist SEO guidance for furniture retailers, showrooms, and ecommerce stores.</p>
+        </div>
+        <div>
+          <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Guides</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/furniture-store-seo/" class="hover:text-white">Furniture Store SEO</a></li>
+            <li><a href="/furniture-website-seo/" class="hover:text-white">Website Optimisation</a></li>
+            <li><a href="/furniture-seo-keywords/" class="hover:text-white">Keyword Research</a></li>
+            <li><a href="/furniture-store-seo-checklist/" class="hover:text-white">SEO Checklist</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Services</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/seo-services-for-furniture/" class="hover:text-white">SEO Services</a></li>
+            <li><a href="/local-seo-furniture-stores/" class="hover:text-white">Local SEO</a></li>
+            <li><a href="/furniture-ecommerce-seo/" class="hover:text-white">Ecommerce SEO</a></li>
+            <li><a href="/contact/" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 text-xs text-slate-500">
+        &copy; 2026 SEO.Furniture. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

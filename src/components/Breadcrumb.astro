@@ -1,0 +1,33 @@
+---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+interface Props {
+  crumbs: Crumb[];
+}
+const { crumbs } = Astro.props;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: crumb.label,
+    ...(crumb.href ? { item: `https://seo.furniture${crumb.href}` } : {}),
+  })),
+};
+---
+<nav aria-label="Breadcrumb" class="text-sm text-slate-400 mb-8">
+  {crumbs.map((crumb, i) => (
+    <>
+      {i > 0 && <span class="mx-1.5">/</span>}
+      {crumb.href
+        ? <a href={crumb.href} class="hover:text-emerald">{crumb.label}</a>
+        : <span class="text-slate-600">{crumb.label}</span>
+      }
+    </>
+  ))}
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
