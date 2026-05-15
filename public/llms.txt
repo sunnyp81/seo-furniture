@@ -1,0 +1,24 @@
+# SEO.Furniture
+
+> Specialist SEO guidance for furniture stores, dealers, and ecommerce retailers.
+
+SEO.Furniture provides expert guides on search engine optimisation for the furniture retail industry. The site covers furniture store SEO strategy, keyword research, technical website optimisation, local search visibility, ecommerce SEO, product description writing, and a practical SEO checklist.
+
+## Pages
+
+- [SEO for Furniture Stores](https://seo.furniture/) — Hub page covering why furniture retailers need SEO and how to approach it
+- [Furniture Store SEO Guide](https://seo.furniture/furniture-store-seo/) — Complete guide to ranking a furniture retail business
+- [SEO Services for Furniture](https://seo.furniture/seo-services-for-furniture/) — What professional SEO services include and how to evaluate providers
+- [Furniture Website SEO](https://seo.furniture/furniture-website-seo/) — Technical and on-page optimisation for furniture websites
+- [Furniture SEO Keywords](https://seo.furniture/furniture-seo-keywords/) — Keyword research methodology for furniture retailers
+- [Local SEO for Furniture Stores](https://seo.furniture/local-seo-furniture-stores/) — Google Maps, GBP, and local pack rankings
+- [Furniture Ecommerce SEO](https://seo.furniture/furniture-ecommerce-seo/) — Category architecture and product page optimisation
+- [Furniture Product Descriptions](https://seo.furniture/furniture-product-description-seo/) — Writing product copy that ranks and converts
+- [Furniture Store SEO Checklist](https://seo.furniture/furniture-store-seo-checklist/) — 20 actionable SEO tasks for furniture retailers
+- [Office Furniture SEO](https://seo.furniture/office-furniture-seo/) — B2B SEO strategy for office and contract furniture
+- [Contact](https://seo.furniture/contact/) — Get a free consultation
+
+## Contact
+
+- Website: https://seo.furniture
+- Enquiries: https://seo.furniture/contact/

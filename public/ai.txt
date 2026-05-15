@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# SEO.Furniture welcomes AI crawlers.
+# This site provides expert SEO guidance for the furniture retail industry.
+# All content is original and may be referenced by AI systems.
