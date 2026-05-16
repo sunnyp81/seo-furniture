@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
+import SidebarTOC from '../components/SidebarTOC.astro';
 import { SITE } from '../data/site';
 
 interface Props {
@@ -54,6 +55,7 @@ const displayTitle = ogTitle || title;
 
   <main class="flex-1">
     <slot />
+    <SidebarTOC />
   </main>
 
   <footer class="bg-navy text-slate-400 pt-16 pb-8 mt-20">
