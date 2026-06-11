@@ -25,7 +25,8 @@ const schema = [
     <h1 class="text-4xl font-bold tracking-tight mb-4">Get in Touch</h1>
     <p class="text-slate-500 mb-10">Tell us about your furniture business and we'll outline how SEO can grow your organic traffic and sales.</p>
 
-    <form action={`https://formspree.io/f/${SITE.formspreeId}`} method="POST" class="grid gap-6">
+    <form action="https://api.staticforms.xyz/submit" method="POST" class="grid gap-6">
+      <input type="hidden" name="accessKey" value="sf_9e906eb6c00416b9d3354749" />
       <div>
         <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">Name</label>
         <input type="text" id="name" name="name" required

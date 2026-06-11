@@ -2,7 +2,6 @@ export const SITE = {
   name: 'SEO.Furniture',
   url: 'https://seo.furniture',
   description: 'Specialist SEO services for furniture stores, dealers, and ecommerce retailers.',
-  formspreeId: 'REPLACE_ME',
 };
 
 export interface SpokeMeta {
